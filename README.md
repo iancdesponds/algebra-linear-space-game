@@ -1,6 +1,6 @@
-# Algebra Linear - APS 1
+# Álgebra Linear - APS 1 - 2024.1 [Insper](https://www.insper.edu.br/pt/home)
 
-## Integrantes do Grupo
+## Autores do Projeto
 - [Ian Cordibello Desponds](https://github.com/iancdesponds)
 - [Gustavo Barroso Cruz](https://github.com/Gubscruz)
 
