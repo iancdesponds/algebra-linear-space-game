@@ -4,6 +4,8 @@
 - [Ian Cordibello Desponds](https://github.com/iancdesponds)
 - [Gustavo Barroso Cruz](https://github.com/Gubscruz)
 
+# [Projeto - Jogo no espaço estilo "Angry Birds"](https://github.com/iancdesponds/algebra-linear-space-game)
+
 ## Requisitos:
 1. Clone o repositório no seu computador
 2. Execute o comando 'pip3 install -r requirements.txt' para instalar as dependências necessárias
@@ -18,5 +20,7 @@ Atirar: No momento em que o mouse é clicado para atirar, o programa calcula as 
 Gravidade: Para o cálculo da força gravitacional, primeiro encontramos a distância entre o projétil e o planeta em cada eixo. Em seguida, fazemos a normalização do vetor direção entre o projétil e o planeta usando a fórmula $\hat{d_x} = \frac{dx}{|d|}$ e $\hat{d_y} = \frac{dy}{|d|}$, onde |d| é igual à distancia entre os dois corpos (encontrada pelo teorema de pitágoras $\sqrt{d_x^2 + d_y^2}$), que, nesse caso, é o módulo do vetor direção. Para encontrar a magnitude da força, usamos a fórmula $F = \frac{G}{d^2}$, onde $G$ é uma constante (no nosso caso 6900) e $d$ é a distância entre os corpos (similar à da mecânica newtoniana ($F = \frac{Gm_1m_2}{d^2}$) mas sem incluir a massa dos objetos). Para a aceleração gerada pela gravidade no projétil, lembramos da Segunda Lei de Newton: $F = ma$; como a massa não é considerada no nosso sistema, a aceleração nada mais é do que a própria força gravitacional. Para achar as componentes da aceleração, multiplicamos o valor que encontramos para a aceleração pelo vetor direção normalizado (unitário) em cada eixo: $a_x = F_x = \frac{G}{d^2} \cdot \hat{d_x}$ e $a_y = F_y = \frac{G}{d^2} \cdot \hat{d_y}$. Nossa lógica funciona para mais de um planeta ao mesmo tempo pois rodamos um for que percorre todos os planetas do mapa e adicionamos a força exercida pelo planeta à aceleração, portanto, a aceleração que é adicionada à velocidade atual do projétil (o que só ocorre após o for termina, pois o for percorre todos os planetas a cada frame) é a soma vetorial de todas das forças gravitacionais exercidas pelos planetas (lembrando que aqui força é igual a aceleração), o que obedece o principio da superposição de forças.
 
 Colisões: Para detectar colisões com os planetas, usamos a fórmula da distância entre dois pontos no plano cartesiano: d = $\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$. Se a distância entre o projétil e o planeta for menor que a soma dos raios dos dois corpos (assumindo que ambos são círculos), significa que houve uma colisão.
+
+## Vídeo de demonstração do jogo
 
 <img src="./src/gif/Gameplay.gif">
